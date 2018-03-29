@@ -14,7 +14,7 @@ attr_accessor :a, :b, :c, :sides
       if @a + @b > @c && @b + @c > @a && @a + @c > @b
         if @sides.select {|side| side == side[0]}.count > 2
         :equilateral
-        elsif @a == @b || @a == @c || @b == @c
+      elsif @sides.select {|side| side == sides[0]}.count > 1 || sides.select {|side| side == sides[1]}.count > 1
         :isosceles
       else
         :scalene
