@@ -3,10 +3,8 @@ attr_accessor :a, :b, :c, :sides
 
 
   def initialize(a, b, c)
-    @a = a
-    @b = b
-    @c = c
-    @sides = [@a, @b, @c]
+  
+    self.sides = [a, b, c]
   end
 
   def kind
@@ -22,7 +20,6 @@ attr_accessor :a, :b, :c, :sides
       else
         raise TriangleError
       end
-
     else
       raise TriangleError
     end
