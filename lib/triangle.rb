@@ -22,8 +22,7 @@ attr_accessor :a, :b, :c, :sides
       else
         raise TriangleError
       end
-    elsif @a <= 0 || @b <= 0 || @c <= 0
-      raise TriangleError
+
     else
       raise TriangleError
     end
