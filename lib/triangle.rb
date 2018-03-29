@@ -12,9 +12,9 @@ attr_accessor :a, :b, :c, :sides
   def kind
     if !@sides.detect {|side| side == 0}
       if @a + @b > @c && @b + @c > @a && @a + @c > @b
-        if @sides.select {|side| side == side[0]}.count > 2
+        if @a == @b && @a == @c
         :equilateral
-      elsif @sides.select {|side| side == sides[0]}.count > 1 || sides.select {|side| side == sides[1]}.count > 1
+        elsif @a == @b || @a == @c || @b == @c
         :isosceles
       else
         :scalene
