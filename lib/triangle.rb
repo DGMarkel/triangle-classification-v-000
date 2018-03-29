@@ -10,8 +10,7 @@ attr_accessor :a, :b, :c, :sides
   end
 
   def kind
-    if !@sides.detect {|side| side == 0}
-      if @a + @b > @c && @b + @c > @a && @a + @c > @b
+
         if @a == @b && @a == @c
         :equilateral
         elsif @a == @b || @a == @c || @b == @c
@@ -26,6 +25,11 @@ attr_accessor :a, :b, :c, :sides
       raise TriangleError
     end
   end
+
+  def valid?
+    !@sides.detect {|side| side == 0} && @a + @b > @c && @b + @c > @a && @a + @c > @b
+  end
+
 
   class TriangleError < StandardError
   end
