@@ -10,19 +10,16 @@ attr_accessor :a, :b, :c, :sides
   end
 
   def kind
-
+    if !self.valid?
+      raise TriangleError
+    else
         if @a == @b && @a == @c
         :equilateral
         elsif @a == @b || @a == @c || @b == @c
         :isosceles
-      else
+        else
         :scalene
         end
-      else
-        raise TriangleError
-      end
-    else
-      raise TriangleError
     end
   end
 
